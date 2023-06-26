@@ -1,0 +1,23 @@
+<h2>My Heroes</h2>
+
+<div class="add-heroes-container">
+  <label for="hero-input">Hero name:</label>
+  <input nz-input id="hero-input" #heroName/>
+  <button nz-button nzType="primary" (click)="addHero(heroName.value)">Add</button>
+</div>
+
+<ul class="list-heroes">
+  <li *ngFor="let hero of heroes" class="list-heroes">
+    <span>{{hero.id}}</span>
+    <button nz-button nzType="default" (click)="onSelect(hero)">
+      <span>{{hero.name}}</span>
+    </button>
+    <button nz-button nzType="primary" nzDanger (click)="deleteHero(hero)">Delete</button>
+  </li>
+</ul>
+
+
+<div *ngIf="selectedHero">
+  <h2>{{selectedHero.name}} is my hero</h2>
+  <button (click)="viewDetail(selectedHero)">View details</button>
+</div>

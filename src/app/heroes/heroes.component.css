@@ -1,0 +1,28 @@
+.add-heroes-container {
+  display: flex;
+  flex-direction: row;
+  col-gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+ul.list-heroes {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+li.list-heroes {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.25rem;
+  align-items: center;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input {
+  width: 300px;
+}

@@ -1,0 +1,6 @@
+<h2>Messages</h2>
+<button nz-button nzType="default" (click)="clearMessage()">Clear message</button>
+<ul class="message-list">
+  <li *ngFor="let message of messages">{{message}}</li>
+
+</ul>

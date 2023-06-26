@@ -1,0 +1,17 @@
+<h2>Top Heroes</h2>
+<div class="top-hero-container">
+  <a *ngFor="let hero of topHeroes" routerLink="/detail/{{hero.id}}" nz-button nzType="link">
+    <button nz-button nzType="primary">
+      {{hero.name}}
+    </button>
+  </a>
+</div>
+
+<div>
+  <h3>Hero Search</h3>
+  <input nz-input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  <div class="search-hero-container">
+    <a *ngFor="let hero of searchedHeroes | async" routerLink="/detail/{{hero.id}}">
+      {{hero.name}}
+    </a>
+</div>
