@@ -1,0 +1,39 @@
+<div class="user-mg-container">
+  <button nz-button nzType="primary" (click)="fetchUser()" [nzLoading]="loading | async">Add 1 users</button>
+  <form #f="ngForm" class="user-mg-multi" (ngSubmit)="fetchMultipleUser(userAmount.value)">
+    <label for="user-amount">User amount: </label>
+    <input name="userAmount" #userAmount="ngModel" ngModel id="user-amount" nz-input type="number" min="1" required/>
+    <button nz-button nzType="primary" [disabled]="f.invalid" [nzLoading]="loading | async">Add multiple users</button>
+  </form>
+  <button nz-button nzType="primary" nzDanger (click)="clearUser()">Clear all users</button>
+</div>
+<nz-table #table [nzData]="users | async">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Email</th>
+    <th>Location</th>
+    <th>DOB</th>
+    <th>Phone</th>
+    <th>Registered</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let data of table.data">
+    <td>{{data["name"]}}</td>
+    <td>{{data["gender"]}}</td>
+    <td>{{data["email"]}}</td>
+    <td>{{data["location"]}}</td>
+    <td>{{data["dob"] | date: 'dd/MM/yyyy'}}</td>
+    <td>{{data["phone"]}}</td>
+    <td>{{data["registered"] | date: 'hh:mm dd/MM/yyyy'}}</td>
+
+    <td>
+      <button nz-button nzType="primary" nzDanger (click)="deleteUser(data)">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>

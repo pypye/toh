@@ -1,0 +1,17 @@
+.user-mg-container{
+  display: inline-flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.user-mg-multi{
+  display: flex;
+  flex-direction: row;
+  column-gap: 1rem;
+  align-items: center;
+}
+
+input{
+  width: 300px;
+}
