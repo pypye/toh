@@ -32,7 +32,4 @@ export class UserManagementComponent implements OnInit {
   deleteUser(user: any) {
     this.userManagementStore.deleteUser(user)
   }
-
-  protected readonly Number = Number;
-  protected readonly parseInt = parseInt;
 }
